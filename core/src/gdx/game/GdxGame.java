@@ -11,8 +11,8 @@ import com.badlogic.gdx.graphics.g2d.Sprite;
 public class GdxGame extends ApplicationAdapter {
 
     SpriteBatch batch;
-    Sprite sprguy, sprWleft, sprWright, sprWup, sprWdown;
-    Texture Txstand, TxWdown, TxWright, TxWleft, TxWup;
+    Sprite sprguy, sprWleft, sprWright, sprWup, sprWdown, sprWLU, sprWRU, sprWLD, sprWRD;
+    Texture Txstand, TxWdown, TxWright, TxWleft, TxWup, TxWLU, TxWRU, TxWLD, TxWRD;
 
     @Override
     public void create() {
@@ -23,11 +23,19 @@ public class GdxGame extends ApplicationAdapter {
         TxWright = new Texture("walkingright.png");
         TxWleft = new Texture("walkingleft.png");
         TxWup = new Texture("walkingup.png");
+        TxWLU = new Texture("walkingLU.png");
+        TxWRU = new Texture("walkingRU.png");
+        TxWLD = new Texture("walkingLD.png");
+        TxWRD = new Texture("walkingRD.png");
         sprguy = new Sprite(Txstand);
         sprWleft = new Sprite(TxWleft);
         sprWright = new Sprite(TxWright);
         sprWup = new Sprite(TxWup);
         sprWdown = new Sprite(TxWdown);
+        sprWLU = new Sprite(TxWLU);
+        sprWRU = new Sprite(TxWRU);
+        sprWLD = new Sprite(TxWLD);
+        sprWRD = new Sprite(TxWRD);
     }
 
     @Override
@@ -38,20 +46,40 @@ public class GdxGame extends ApplicationAdapter {
         batch.draw(sprguy, sprguy.getX(), sprguy.getY());
         batch.end();
         if (Gdx.input.isKeyPressed(Input.Keys.LEFT)) {
-            sprguy.setX(sprguy.getX() - 100 * Gdx.graphics.getDeltaTime());
+            sprguy.setX(sprguy.getX() - 200 * Gdx.graphics.getDeltaTime());
             sprguy.setTexture(TxWleft);
         }
         if (Gdx.input.isKeyPressed(Input.Keys.RIGHT)) {
-            sprguy.setX(sprguy.getX() + 100 * Gdx.graphics.getDeltaTime());
+            sprguy.setX(sprguy.getX() + 200 * Gdx.graphics.getDeltaTime());
             sprguy.setTexture(TxWright);
         }
         if (Gdx.input.isKeyPressed(Input.Keys.UP)) {
-            sprguy.setY(sprguy.getY() + 100 * Gdx.graphics.getDeltaTime());
+            sprguy.setY(sprguy.getY() + 200 * Gdx.graphics.getDeltaTime());
             sprguy.setTexture(TxWup);
         }
         if (Gdx.input.isKeyPressed(Input.Keys.DOWN)) {
-            sprguy.setY(sprguy.getY() - 100 * Gdx.graphics.getDeltaTime());
+            sprguy.setY(sprguy.getY() - 200 * Gdx.graphics.getDeltaTime());
             sprguy.setTexture(TxWdown);
+        }
+        if (Gdx.input.isKeyPressed(Input.Keys.DOWN)&&Gdx.input.isKeyPressed(Input.Keys.LEFT)) {
+            sprguy.setY(sprguy.getY() - 80 * Gdx.graphics.getDeltaTime());
+            sprguy.setX(sprguy.getX() - 80 * Gdx.graphics.getDeltaTime());
+            sprguy.setTexture(TxWLD);
+        }
+        if (Gdx.input.isKeyPressed(Input.Keys.DOWN)&&Gdx.input.isKeyPressed(Input.Keys.RIGHT)) {
+            sprguy.setY(sprguy.getY() - 80 * Gdx.graphics.getDeltaTime());
+            sprguy.setX(sprguy.getX() + 80 * Gdx.graphics.getDeltaTime());
+            sprguy.setTexture(TxWRD);
+        }
+        if (Gdx.input.isKeyPressed(Input.Keys.UP)&&Gdx.input.isKeyPressed(Input.Keys.LEFT)) {
+            sprguy.setY(sprguy.getY() + 80 * Gdx.graphics.getDeltaTime());
+            sprguy.setX(sprguy.getX() - 80 * Gdx.graphics.getDeltaTime());
+            sprguy.setTexture(TxWLU);
+        }
+        if (Gdx.input.isKeyPressed(Input.Keys.UP)&&Gdx.input.isKeyPressed(Input.Keys.RIGHT)) {
+            sprguy.setY(sprguy.getY() + 80 * Gdx.graphics.getDeltaTime());
+            sprguy.setX(sprguy.getX() + 80 * Gdx.graphics.getDeltaTime());
+            sprguy.setTexture(TxWRU);
         }
     }
 
@@ -63,5 +91,9 @@ public class GdxGame extends ApplicationAdapter {
         TxWright.dispose();
         TxWup.dispose();
         TxWdown.dispose();
+        TxWLD.dispose();
+        TxWRD.dispose();
+        TxWLU.dispose();
+        TxWRU.dispose();
     }
 }
