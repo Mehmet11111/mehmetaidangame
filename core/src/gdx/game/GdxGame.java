@@ -81,6 +81,9 @@ public class GdxGame extends ApplicationAdapter {
             sprguy.setX(sprguy.getX() + 60 * Gdx.graphics.getDeltaTime());
             sprguy.setTexture(TxWRU);
         }
+        if (!Gdx.input.isKeyPressed(Input.Keys.W)&&!Gdx.input.isKeyPressed(Input.Keys.A)&&!Gdx.input.isKeyPressed(Input.Keys.S)&&!Gdx.input.isKeyPressed(Input.Keys.D)) {
+            sprguy.setTexture(Txstand);
+        }   
     }
 
     @Override
