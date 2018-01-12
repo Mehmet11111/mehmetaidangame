@@ -8,7 +8,7 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 //edit test
-public class GdxGame extends ApplicationAdapter {
+public class sprite_movement extends ApplicationAdapter {
 
     SpriteBatch batch;
     Sprite sprguy, sprWleft, sprWright, sprWup, sprWdown, sprWLU, sprWRU, sprWLD, sprWRD;
