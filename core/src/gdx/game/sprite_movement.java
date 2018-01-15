@@ -7,7 +7,8 @@ import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.Sprite;
-//edit test
+
+
 public class sprite_movement extends ApplicationAdapter {
 
     SpriteBatch batch;
@@ -17,7 +18,6 @@ public class sprite_movement extends ApplicationAdapter {
     @Override
     public void create() {
         batch = new SpriteBatch();
-        
         Txstand = new Texture("guystanding.png");
         TxWdown = new Texture("walkingdown.png");
         TxWright = new Texture("walkingright.png");
